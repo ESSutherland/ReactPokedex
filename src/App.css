@@ -1,38 +1,513 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+
+:root{
+  --bug: #92BC2C;
+  --dark: #595761;
+  --dragon: #0C69C8;
+  --electric: #F2D94E;
+  --fire: #FBA54C;
+  --fairy: #EE90E6;
+  --fighting: #D3425F;
+  --flying: #A1BBEC;
+  --ghost: #5F6DBC;
+  --grass: #5FBD58;
+  --ground: #DA7C4D;
+  --ice: #75D0C1;
+  --normal: #A0A29F;
+  --poison: #B763CF;
+  --psychic: #FA8581;
+  --rock: #C9BB8A;
+  --steel: #5695A3;
+  --water: #539DDF;
+}
+
+* {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+body{
+  margin: 0;
+  background: radial-gradient(#EDF2F4, #8D99AE 90%);
+  background-size: cover;
+  font-family: 'IBM Plex Sans KR', sans-serif; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img{
+  user-select: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.main{
+  display: flexbox;
+  width: 100%;
+}
+
+.header{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  padding: 15px 0;
+  background: #2B2D42;
+  color: #EDF2F4;
+}
+
+.loading {
+  font-size: 5rem;
+  height: 500px;
+  margin: 30px auto;
+  width: 450px;
+  display: inline-block;
+  background: #EDF2F4;
+}
+
+.pokemon-header{
+  display: flexbox;
+  margin: 20px auto;
+  width: 520px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.pokemon-header .number{
+  position: relative;
+  font-size: 2rem;
+  float: left;
+  height: 100%;
+  width: 140px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #D90429;
+  color: #EDF2F4;
+  border-left: #2B2D42 solid 2px;;
+}
+
+.pokemon-header .name{
+  position: relative;
+  float: left;
+  font-size: 2.5rem;
+  height: 100%;
+  width: 300px;
+  font-weight: bold;
+  background: #EDF2F4;
+  color: #2B2D42;
+  border-right: #2B2D42 solid 2px;
+}
+
+.pokemon-header .name:before {
+  content: '';
+  line-height: 0;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 60px solid #EDF2F4;
+  border-left: 30px solid transparent;
+  border-right: 0px solid #EDF2F4;
+  position: absolute;
+  top: -50px;
+  left: -30px;
+}
+
+.pokemon-header .genus{
+  float: right;
+  font-size: 1.5rem;
+  margin-top: 3%;
+  margin-right: 5%;
+}
+
+.btn{
+  float: left;
+  width: 38px;
+  height: 100%;
+  line-height: 60px;
+  font-size: 2rem;
+  font-weight: bold;
+  background: #EDF2F4;
+  color: #2B2D42;
+}
+
+.btn:hover{
+  background: #8D99AE;
+  cursor: pointer;
+}
+
+.pokemon-img{
+  background:  url('./images/pokeball.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+}
+
+.pokemon-img img{
+  filter: drop-shadow(20px 10px 2px rgba(0,0,0,0.4));
+}
+
+.pokemon-type{
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.types{
+  margin-bottom: 20px;
+}
+
+.center{
+  margin: 0 auto;
+  width: 450px;
+  background: #EDF2F4;
+  margin-bottom: 10px;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  float: left;
+}
+.icon img {
+  height: 60%;
+  width: 60%;
+  margin: 20%;
+}
+
+.type-name{
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
   color: white;
+  margin-left: 24%;
+  height: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
 }
 
-.App-link {
-  color: #61dafb;
+.type-box{
+  margin-right: 10px;
+  width: 130px;
+  display: inline-block;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content{
+  display: inline-block;
+}
+
+.scroll-container{
+  position: absolute;
+  top: 205px;
+  left: 1000px;
+  width: 200px;
+  height: 530px;
+  overflow-y: scroll;
+}
+
+.scroll-container::-webkit-scrollbar{
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track{
+  background: #2B2D42;
+}
+
+.scroll-container::-webkit-scrollbar-button{
+  display: none;
+}
+
+.scroll-container::-webkit-scrollbar-thumb{
+  background: #EF233C;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #D90429;
+}
+
+.pane-container{
+  width: 100%;
+  height: 60px;
+  background: #EDF2F4;
+  color: #EDF2F4;
+  margin-top: 5px;
+  font-weight: bold;
+  box-shadow: #2B2D42 0 2px;
+}
+
+.pane-container:hover{
+  background: #8D99AE;
+  cursor: pointer;
+}
+
+.pane-number{
+  vertical-align: middle;
+  line-height: 60px;
+  float: left;
+  padding: 0 20px;
+  background: #2B2D42;
+}
+
+.selected-pane{
+  background: #8D99AE;
+  color: #EF233C;
+}
+
+.selected-pane:hover {
+  cursor: default;
+}
+
+.scroll-icon{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.container{
+  width: 1000px;
+}
+
+.shiny{
+  position: absolute;
+  top: 265px;
+  left: 59%;
+}
+
+.height-weight{
+  float: left;
+  margin-top:160px;
+}
+
+.hw-container{
+  background: #EDF2F4;
+  width: 200px;
+  height: 100px;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 60px;
+  margin-top: 20px;
+  box-shadow: #2B2D42 0 2px;
+}
+
+.hw-title{
+  background: #2B2D42;
+  color: #EDF2F4;
+  font-weight: bold;
+  line-height: 40px;
+  font-size: 1rem;
+}
+
+.genus{
+  background: #2B2D42;
+  color: #EDF2F4;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.form {
+  background: #2B2D42;
+  color: #EDF2F4;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-top: #2B2D42 solid 2px;
+}
+
+.form-btn {
+  float: left;
+  width: 40px;
+  height: 100%;
+  font-size: 2rem;
+  font-weight: bold;
+  background: #EDF2F4;
+  color: #2B2D42;
+}
+
+.form-btn:hover {
+  background: #8D99AE;
+  cursor: pointer;
+}
+
+.forms{
+  float: left;
+  width: 370px;
+}
+
+.shiny-button{
+  border: #2B2D42 2px solid;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  line-height: 50px;
+}
+
+.shiny-button:hover{
+  background: #8D99AE;
+  cursor: pointer;
+}
+
+.shiny-button img{
+  vertical-align: middle;
+}
+
+.selected{
+  background: #8D99AE;
+  border-color: #EF233C;
+}
+
+.abilities{
+  margin: 20px auto;
+  width: 200px;
+  background: #EDF2F4;
+  display: inline-block;
+}
+
+.ability-title{
+  background: #2B2D42;
+  color: #EDF2F4;
+  font-weight: bold;
+  height: 30px;
+  line-height: 30px;
+  font-size: 1rem;
+}
+
+.ability{
+  width: 100%;
+  padding: 10px 0;
+  display: inline-block;
+  font-weight: bold;
+  border-bottom: #2B2D42 2px solid;
+}
+
+.ability-name{
+  font-size: 1rem;
+  height: 25px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.ability .ability-desc{
+  visibility: hidden;
+  font-size: 0.9rem;
+  position: absolute;
+  width: 200px;
+  height: 170px;
+  background-color: #EDF2F4;
+  color: #2B2D42;
+  text-align: center;
+  padding: 5px;
+  z-index: 1;
+  transform: translateX(-215px);
+  top: 540px;
+}
+
+.ability:hover{
+  cursor: help;
+  background: #8D99AE;
+}
+
+.ability:hover .ability-desc{
+  visibility: visible;
+}
+
+.hidden{
+  font-size: 0.6rem;
+  color: #EF233C;
+}
+
+.evo-pane{
+  border: black solid 2px;
+  float: left;
+  margin-right: 20px;
+  height: 100%;
+}
+
+.evo-line{
+  border: black solid 2px;
+  padding: 5px;
+  display: inline-block;
+}
+
+.bug-icon {
+  background: var(--bug);
+}
+
+.dark-icon {
+  background: var(--dark);
+}
+
+.dragon-icon {
+  background: var(--dragon);
+}
+
+.electric-icon {
+  background: var(--electric);
+}
+
+.fire-icon {
+  background: var(--fire);
+}
+
+.fairy-icon {
+  background: var(--fairy);
+}
+
+.fighting-icon {
+  background: var(--fighting);
+}
+
+.flying-icon {
+  background: var(--flying);
+}
+
+.ghost-icon {
+  background: var(--ghost);
+}
+
+.grass-icon {
+  background: var(--grass);
+}
+
+.ground-icon {
+  background: var(--ground);
+}
+
+.ice-icon {
+  background: var(--ice);
+}
+
+.normal-icon {
+  background: var(--normal);
+}
+
+.poison-icon {
+  background: var(--poison);
+}
+
+.psychic-icon {
+  background: var(--psychic);
+}
+
+.rock-icon {
+  background: var(--rock);
+}
+
+.steel-icon {
+  background: var(--steel);
+}
+
+.water-icon {
+  background: var(--water);
+}
+
+.disabled {
+  background: #8D99AE;
+}
+
+.disabled:hover {
+  cursor: default;
 }

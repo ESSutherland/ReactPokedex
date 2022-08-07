@@ -1,0 +1,63 @@
+
+[WorldGen]
+	#Min chunks between domes
+	#Range: 1 ~ 1000
+	min = 10
+	#Max chunks between domes
+	#Range: 1 ~ 1000
+	max = 25
+	#Voice Trumpet Spawnrate (%)
+	#Range: 0 ~ 100
+	probability = 0
+	#Whether or not the full grass block should turn vanilla grass into full grass (like how dirt turns into grass)
+	invasive_grass = true
+
+[Entities]
+	#Range: 1 ~ 1000000
+	mimi_weight = 1
+	#Range: 1 ~ 1000000
+	daadaa_weight = 1
+	#Range: 1 ~ 1000000
+	umpiepumpie_weight = 1
+	#Chance of Teletubby transforming into zombie Teletubby
+	#Range: 1 ~ 100
+	transformation_probability = 25
+	#Range: 1 ~ 1000000
+	dipsy_weight = 1
+	#Range: 1 ~ 1000000
+	nin_weight = 1
+	#Range: 1 ~ 1000000
+	laalaa_zombie_weight = 1
+	#Range: 1 ~ 1000000
+	ping_weight = 1
+	#Range: 1 ~ 1000000
+	laalaa_weight = 1
+	#Range: 1 ~ 1000000
+	po_weight = 1
+	#Range: 1 ~ 1000000
+	noonoo_weight = 1
+	#Range: 1 ~ 1000000
+	po_zombie_weight = 1
+	#Range: 1 ~ 1000000
+	duggledee_weight = 1
+	#Range: 1 ~ 1000000
+	tinkywinky_zombie_weight = 1
+	#Range: 1 ~ 1000000
+	tinkywinky_weight = 1
+	#Range: 1 ~ 1000000
+	ba_weight = 1
+	#Range: 1 ~ 1000000
+	ruru_weight = 1
+	#Range: 1 ~ 1000000
+	dipsy_zombie_weight = 1
+
+[Food]
+	#Range: 1 ~ 100
+	toast_hunger = 2
+	#Range: 1 ~ 100
+	custard_hunger = 5
+	#Range: 1.0 ~ 100.0
+	custard_saturation = 1.5
+	#Range: 1.0 ~ 100.0
+	toast_saturation = 1.0
+

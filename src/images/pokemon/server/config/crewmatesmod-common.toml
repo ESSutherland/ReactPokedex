@@ -1,0 +1,18 @@
+
+["Crewmate Spawn Settings"]
+	#Min: Minimum Number of Crewmates in a Group. MUST BE LOWER THAN MAX!  Default: 6
+	#Range: 2 ~ 64
+	min = 2
+	#Max: Maximum Number of Crewmates in a Group. MUST BE HIGHER THAN MIN!  Default: 12
+	#Range: 2 ~ 64
+	max = 2
+	"Crewmates can spawn in the End" = false
+	#Spawn Rate: Set weight to 0 to disable. Default: 10
+	#Range: 0 ~ 100
+	weight = 10
+	"Crewmates can spawn in the Overworld" = false
+	#Imposter Spawning
+	#Range: 0 ~ 2
+	"Normal Spawning = 0, No Imposter = 1, ONLY Imposters = 2" = 2
+	"Crewmates can spawn in the Nether" = false
+
