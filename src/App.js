@@ -7,6 +7,7 @@ import PokemonType from './components/PokemonType';
 import PokemonScrollBar from './components/PokemonScrollBar';
 import PokemonHeightWeight from './components/PokemonHeightWeight';
 import PokemonForm from './components/PokemonForm';
+import PokemonBaseStats from './components/PokemonBaseStats';
 
 import load from './images/load.png'
 import shiny from './images/shiny.png'
@@ -30,7 +31,6 @@ function App() {
   const [pokemonList, setPokemonList] = useState([])
   const [formName, setFormName] = useState('')
   const [genusName, setGenusName] = useState('')
-  const [evoChain, setEvoChain] = useState('')
 
   const blocked_forms = ['-rock-star', '-belle', '-pop-star', '-phd', '-libre', '-cosplay', '-totem', 
   '-unknown', '-antique', '-eternal', '-swirl', '-ruby', '-matcha', '-mint', '-lemon',
@@ -151,9 +151,6 @@ function App() {
       setPokemonSpecies(species)
       getEnglishGenusName(species.genera)
       getGender(species)
-      getResource(species.evolution_chain.url).then((chain) => {
-        setEvoChain(chain)
-      })
       getVarieties(species).then((pokeList) => {
         pokeList = pokeList.filter((x) => {return x !== undefined})
         setVarieties(pokeList)
@@ -201,7 +198,6 @@ function App() {
         <div className='loading'><img src={load}/></div>
         :
         <div>
-          <PokemonScrollBar pokemonList={pokemonList} setPokeId={setData} pokeId={pokeId}/>
           <div>
             {
               isLoading ?
@@ -228,9 +224,12 @@ function App() {
                   <PokemonForm varieties={varieties} varietyIndex={varietyIndex} forms={forms} formIndex={formIndex} formName={formName} setVarietyIndex={setVarietyIndex} setFormIndex={setFormIndex}/>
       
                 </div>
+                <PokemonBaseStats pokemon={pokemon} getResource={getResource}/>
               </div>  
               }
             </div>
+            <PokemonScrollBar pokemonList={pokemonList} setPokeId={setData} pokeId={pokeId}/>
+
         </div>
       }
       </div>

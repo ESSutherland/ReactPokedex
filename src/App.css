@@ -197,7 +197,7 @@ img{
 .scroll-container{
   position: absolute;
   top: 205px;
-  left: 1000px;
+  left: 1300px;
   width: 200px;
   height: 530px;
   overflow-y: scroll;
@@ -394,14 +394,13 @@ img{
   visibility: hidden;
   font-size: 0.9rem;
   position: absolute;
-  width: 200px;
+  width: 180px;
   height: 170px;
   background-color: #EDF2F4;
   color: #2B2D42;
   text-align: center;
-  padding: 5px;
-  z-index: 1;
   transform: translateX(-215px);
+  padding: 10px;
   top: 540px;
 }
 
@@ -419,17 +418,46 @@ img{
   color: #EF233C;
 }
 
-.evo-pane{
-  border: black solid 2px;
-  float: left;
-  margin-right: 20px;
-  height: 100%;
+.base-stats{
+  display: inline-block;
+  background: #EDF2F4;
+  width: 500px;
+  margin: 20px 0;
 }
 
-.evo-line{
-  border: black solid 2px;
-  padding: 5px;
+.stat{
   display: inline-block;
+  width: 100%;
+  margin: 10px 0;
+  line-height: 30px;
+}
+
+.stat-name{
+  float: left;
+  height: 20px;
+  line-height: 22px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.stat-amount{
+  float: right;
+  line-height: 22px;
+  margin-right: 10px;
+}
+
+.full-bar{
+  float: right;
+  width: 300px;
+  height: 20px;
+  background: #8D99AE;
+  padding: 1px;
+  margin-right: 20px;
+}
+
+.stat-bar{
+  background: #EF233C;
+  height: 20px;
 }
 
 .bug-icon {
